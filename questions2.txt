@@ -10,13 +10,28 @@ one model, why did you choose this model?
 fields. Based on your observations, what kind of distribution did you 
 find, and what steps would you take, if any, to prepare the data in 
 those fields?
+	- I examined the 'bedroomcnt', 'bathroomcnt', and 'calculatedfinishedsquarefeet' fields
+	using a histogram. I observed that the bedroom and bathroom count seemed to look a little
+	gaussian with a small skew towards the left. I would probably impute these values as the median
+	for most houses that don't have values for this field unless I were to predict how many they
+	had based on the squarefeet of the property. For the finished square feet field, I found this
+	heavily skewed left, but looked rather gaussian when outliers on the high end were removed. I would
+	try to impute the median or average of the gaussian looking data for properties that do not
+	have this value reported, unless I could draw a better estimate of the square feet from
+	other features.
 
 3. What was your final score, and what steps would you attribute to 
 improving your score during data preparation, model selection, or 
 parameter tuning?
+	- My final Mean Absolute Error was around 0.6689. I think I could improve this value if I took
+	more time cleaning and imputing data as I spent a decent amount of time during hyperparameter 
+	tuning. I only used about 26 features as I dropped columns with lots of nan values so if I
+	did well imputing them, I could probably improve this error.
+
 
 If you used AI assistants such as Copilot & ChapGPT:
 - Which AI tools did you use and for what part of the solution?
 - Optional: share any reflection on using such tools. For instance, did  
 hey contribute to your learning? Were they more helpful than harmful? 
 Did you notice any mistakes in their outputs?
+	- I did not make use of any AI assistants during this assignment
